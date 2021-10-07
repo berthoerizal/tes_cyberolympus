@@ -13,7 +13,7 @@ class LaporanController extends Controller
 
     public function index()
     {
-        $title = 'Laporan page';
+        $title = 'Laporan';
         $sub_title = 'laporan';
         return view('laporan.index', ['title' => $title, 'sub_title' => $sub_title]);
     }
