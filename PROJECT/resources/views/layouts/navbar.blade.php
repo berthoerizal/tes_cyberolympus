@@ -22,9 +22,15 @@
                 <li class="nav-item">
                     <a class="nav-link {{$sub_title=='order'?'active':''}}" href="{{route('order.index')}}">Order</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link {{$sub_title=='laporan'?'active':''}}" href="{{route('laporan.index')}}">Laporan</a>
-                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle {{$sub_title=='laporan'?'active':''}}" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Laporan
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="{{route('cari_order')}}">Cari Order</a>
+                      <a class="dropdown-item" href="{{route('cari_customer')}}">Cari Customer</a>
+                    </div>
+                  </li>
             </ul>
 
             <!-- Right Side Of Navbar -->

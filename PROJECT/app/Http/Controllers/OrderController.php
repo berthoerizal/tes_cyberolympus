@@ -24,10 +24,24 @@ class OrderController extends Controller
                 'users.first_name',
                 'users.last_name',
                 DB::raw('sum(order_detail.qty) as sum_qty'),
-                DB::raw('count(order_detail.id) as count_item')
+                DB::raw('count(order_detail.product_id) as count_item')
             )
             ->groupBy('invoice_id')
-            ->paginate(5);
+            ->orderBy('invoice_id')
+            ->paginate(10);
+
+        // $orders = DB::table('orders')
+        //     ->leftJoin('users', 'orders.agent_id', '=', 'users.id')
+        //     ->leftJoin('order_detail', 'orders.id', '=', 'order_detail.order_id')
+        //     ->select(
+        //         'orders.*',
+        //         'users.first_name',
+        //         'users.last_name',
+        //         'order_detail.qty as sum_qty',
+        //         'order_detail.product_id as count_item'
+        //     )
+        //     ->orderBy('invoice_id')
+        //     ->paginate(10);
 
 
         return view('order.index', ['title' => $title, 'sub_title' => $sub_title, 'orders' => $orders]);

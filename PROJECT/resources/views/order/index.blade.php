@@ -20,7 +20,7 @@
                                     <th>Customer Name</th>
                                     <th>Agent Name</th>
                                     <th>Jumlah qty</th>
-                                    <th>Jumlah item</th>
+                                    <th>Total item</th>
                                 </tr>
                             </thead>
                             <tbody>
