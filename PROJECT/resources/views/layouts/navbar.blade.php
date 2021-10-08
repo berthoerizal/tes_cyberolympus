@@ -7,6 +7,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
+               
+                @guest
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{route('home')}}">Home</a>
+                </li>
+                @else
                 <li class="nav-item">
                     <a class="nav-link {{$sub_title=='home'?'active':''}}" href="{{route('home')}}">Home</a>
                 </li>
@@ -34,6 +40,7 @@
                       <a class="dropdown-item" href="{{route('cari_customer')}}">Cari Customer</a>
                     </div>
                   </li>
+                @endguest
             </ul>
 
             <!-- Right Side Of Navbar -->
@@ -51,7 +58,7 @@
                 @else
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }}
+                            {{ Auth::user()->email }}
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
